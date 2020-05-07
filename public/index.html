@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="utf-8">
@@ -31,58 +31,145 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">UI Migration</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li class="active"><a href="#angular-js">AngularJS</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deklaratives Rendern<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#ang-presentation">Darstellung</a></li>
+                  <li><a href="#">Darstellungsbedingungen</a></li>
+                  <li><a href="#">Verhalten</a></li>
+                  <li><a href="#">Datenbindung</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
+                  <li class="dropdown-header">Benutzerdefinierte Direktiven</li>
+                  <li><a href="#">Lebenszyklus-Hooks</a></li>
+                  <li><a href="#">Aktualisierungs-Reihenfolge</a></li>
+                  <li><a href="#">Datenbindung</a></li>
+                  <li><a href="#">Interrelationen</a></li>
+                  <li><a href="#">Verhalten & DOM-Aktualisierung</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Komponenten-Systeme</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Datenbindung</a></li>
+                  <li><a href="#">Formatierung</a></li>
+                  <li><a href="#">Darstellungskontrolle</a></li>
+                  <li><a href="#">Validierung</a></li>
+                  <li><a href="#">UI-Geschäftslogik</a></li>
+                </ul>
+              </li>
+              <li class="active"><a href="#angular-js">React</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deklaratives Rendern<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#ang-presentation">Darstellung</a></li>
+                  <li><a href="#">Darstellungsbedingungen</a></li>
+                  <li><a href="#">Verhalten</a></li>
+                  <li><a href="#">Datenbindung</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Benutzerdefinierte Direktiven</li>
+                  <li><a href="#">Lebenszyklus-Hooks</a></li>
+                  <li><a href="#">Aktualisierungs-Reihenfolge</a></li>
+                  <li><a href="#">Datenbindung</a></li>
+                  <li><a href="#">Interrelationen</a></li>
+                  <li><a href="#">Verhalten & DOM-Aktualisierung</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Komponenten-Systeme</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Datenbindung</a></li>
+                  <li><a href="#">Formatierung</a></li>
+                  <li><a href="#">Darstellungskontrolle</a></li>
+                  <li><a href="#">Validierung</a></li>
+                  <li><a href="#">UI-Geschäftslogik</a></li>
                 </ul>
               </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="../navbar/">Default</a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
-            </ul>
+            
           </div><!--/.nav-collapse -->
         </div>
     </nav>
-    <div class="container" ng-app="angularjsApp">
 
-        <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">
-          <h1>Navbar example</h1>
+    <div id="angular-js" class="container" ng-app="angularjsApp">
+      <section id="ang-declarative-rendering">
+        <h1  class="text-center">Deklaratives Rendern mit AngularJS</h1>
+        <h2  class="text-center">Darstellung</h2>
+        <h3 class="page-header">Dynamisches Rendering</h3>
+        <article id="ang-presentation">
+          <h3 class="api">ngRepeat</h3>
           <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
           <p>To see the difference between static and fixed top navbars, just scroll.</p>
+          <h4>Beispiel</h4>
+          <h5>Code</h5>
+          <div class="bs-example" data-example-id="simple-nav-tabs">
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active enableNav"><a href="">controller.js</a></li>
+              <li role="presentation" class="enableNav"><a href="">index.html</a></li>
+            </ul>
+            <div>
+              <div>
+                <figure class="highlight">
+                  <pre><code class="prettyprint lang-js">const itemTypes = {</br>  SUCCESS: 'success',</br> INFO: 'info',</br>  WARNING: 'warning',</br>  DANGER: 'danger'</br>}</br>app.controller('NgRepeatCtrl', ['$scope', function() {</br>  this.dataList = [</br>    { itemText: "Dapibus ac facilisis in", href: "#ngRepeat", itemType: itemTypes.SUCCESS },</br>   { itemText: "Cras sit amet nibh libero", href: "#ngRepeat", itemType: itemTypes.INFO },</br>    { itemText: "Porta ac consectetur ac", href: "#ngRepeat", itemType: itemTypes.WARNING },</br>   { itemText:"Vestibulum at eros", href:"#ngRepeat", itemType: itemTypes.DANGER }</br>  ];</br>}]);</code></pre>
+                </figure>
+              </div>
+              <div class="hidden">
+                <figure class="highlight">
+                  <pre><code class="prettyprint lang-html" >&lt;div ng-controller=&quot;NgRepeatCtrl as ctrl&quot;&gt; </br>  &lt;div class=&quot;list-group&quot;&gt;</br>   &lt;a ng-repeat=&quot;item in ctrl.dataList&quot; ng-class=&quot;'list-group-item list-group-item-'+item.itemType&quot; ng-href=&quot;{ { item.href } }&quot; ng-bind=&quot;item.itemText&quot;&gt;&lt;/a&gt; </br>  &lt;/div&gt; </br>&lt;/div&gt;</code></pre>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <h5>Ergebnis</h5>
+          <div ng-controller="NgRepeatCtrl as ctrl">
+            <div class="list-group">
+               <a ng-repeat="item in ctrl.dataList" 
+                  ng-class="'list-group-item list-group-item-'+item.itemType" 
+                  ng-href="{{item.href}}" ng-bind="item.itemText"></a>
+            </div>
+          </div>
           <p>
             <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs »</a>
           </p>
-        </div>
-  
+        </article>
+      </section>
     </div>
-    <div class="container">
-        <p class='glyphicon-asterisk'>Hello from React Root element!</p>
-        <button class='btn-primary'>Click!</button>
-    </div>
-    <div id="root"></div>
-  
 
+    <div id="root" class="container"></div>
+  
+  
+  <script>
+    function enableNav(e) {
+      const parentUl = event.target.parentElement.parentElement;
+      const li = event.target.parentElement;
+      const navnodes = parentUl.childNodes;
+      let index = Array.prototype.indexOf.call(navnodes, li);
+      for (let node of navnodes) {
+        console.log(node);
+        console.log(index);
+        node.classList.remove("active");
+      }
+      li.classList.add("active");
+      const contentnodes = parentUl.nextSibling.childNodes;
+      for (let node of contentnodes) {
+        node.classList.add("hidden");
+      }
+      contentnodes.item(index).classList.remove('hidden');
+    }
+    for (let navelement of document.querySelectorAll(".enableNav")) {
+      navelement.addEventListener("click", enableNav);
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/dropdown.js"></script>
   <script src="angularjs/angularjsApp.js"></script>
+  <script src="angularjs/declarativeRendering/presentation/dynamicRendering/01_ngRepeat.js"></script>
 </body>
 
 </html>

@@ -11,6 +11,7 @@ html {
 }
 body {
   margin: 0;
+  padding-top: 120px;
 }
 article,
 aside,
@@ -265,8 +266,8 @@ th {
 }
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: url("fonts/glyphicons-halflings-regular.eot");
-  src: url("fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("fonts/glyphicons-halflings-regular.woff") format("woff"), url("fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("../fonts/glyphicons-halflings-regular.eot");
+  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 .glyphicon {
   position: relative;
@@ -1088,10 +1089,6 @@ body {
   color: #333333;
   background-color: #fff;
 }
-body {
-  min-height: 2000px;
-  padding-top: 70px;
-}
 input,
 button,
 select,
@@ -1289,6 +1286,9 @@ h5,
 h6,
 .h6 {
   font-size: 12px;
+}
+.api {
+  color: navy;
 }
 p {
   margin: 0 0 10px;
