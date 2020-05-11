@@ -1,0 +1,7 @@
+<div ng-controller="NgRepeatCtrl">
+    <div class="list-group">
+       <a ng-repeat="item in dataList" 
+          ng-class="'list-group-item list-group-item-'+item.itemType" 
+          ng-href="{{item.href}}" ng-bind="item.itemText"></a>
+    </div>
+</div>

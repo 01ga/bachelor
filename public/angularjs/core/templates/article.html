@@ -1,0 +1,22 @@
+<article id="{{createUIId(article.title)}}">
+    <h3 class="api" ng-bind="article.title"></h3>
+    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+    <p>To see the difference between static and fixed top navbars, just scroll.</p>
+    <h4>Beispiel</h4>
+    <h5>Code</h5>
+    <div class="bs-example" data-example-id="simple-nav-tabs">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="enableNav" ng-repeat="snippet in article.codeSnippets" ng-class="{active: (selected === undefined)? $index === 0 : isActive(snippet.name)}"><a href="" ng-click="select(snippet.name)" ng-bind="snippet.name"></a></li>
+      </ul>
+    <div ng-repeat="snippet in article.codeSnippets" ng-class="{hidden: (selected === undefined)? $index !== 0 : !isActive(snippet.name)}">
+        <figure class="highlight">
+        <pre><code class="prettyprint" ng-class="snippet.lan" ng-bind="snippet.code"></code></pre>
+        </figure>
+    </div>
+    </div>
+    <h5>Ergebnis</h5>
+    <ng-include src="article.templateUrl"></ng-include>
+    <p>
+      <a class="btn btn-lg btn-primary" ng-click="scrollTo(article.reactLink)" role="button">React Version »</a>
+    </p>
+  </article>
