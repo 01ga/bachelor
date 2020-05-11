@@ -1,7 +1,8 @@
 <div ng-controller="NgRepeatCtrl">
     <div class="list-group">
-       <a ng-repeat="item in dataList" 
-          ng-class="'list-group-item list-group-item-'+item.itemType" 
-          ng-href="{{item.href}}" ng-bind="item.itemText"></a>
+       <a ng-repeat="item in dataList track by item.itemType+item.itemText"
+            ng-class="$first ? 'hidden' :'list-group-item list-group-item-'+item.itemType" 
+            ng-href="{{item.href}}" ng-bind="$index + ') ' +item.itemText">
+        </a>
     </div>
 </div>

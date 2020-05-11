@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MigrationCheck from './migrationCheck';
 
 /* props {
     title: string,
@@ -30,7 +31,7 @@ class CodeTabs extends Component {
           <li key={snippet.name} 
             role="presentation"
             className={(index === this.state.activeTabIndex) ? "active" : ""}>
-              <a href="#" onClick={(e) => this.activateTab(e, index)}>{snippet.name}</a>
+              <a href="#none" onClick={(e) => this.activateTab(e, index)}>{snippet.name}</a>
           </li>
       )})
     );
@@ -78,7 +79,7 @@ function Article(props) {
       <h5>Ergebnis</h5>
       {props.result}
       <h4>Migration Prüfung</h4>
-      {props.migrationCheck}
+      <MigrationCheck {... props.migrationCheck} />
       <p>
         <a className="btn btn-lg btn-primary" href={"#" + props.angularLink} role="button">AngularJS Version »</a>
       </p>
