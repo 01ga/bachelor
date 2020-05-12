@@ -89,7 +89,7 @@ const data = {
           {
             change: "ng-class-odd, ng-class-even",
             ang: 
-`<div ng-repeat=""item in data"
+`<div ng-repeat="item in data"
     ng-class-odd="item.classOdd"
     ng-class-even="item.classEven">
     ...
