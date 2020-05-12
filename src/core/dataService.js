@@ -1,7 +1,9 @@
 import { NgRepeatModule } from "../declarativeRendering/presentation/dynamicRendering/01_ngRepeat";
+import { NgClassModule } from "../declarativeRendering/presentation/design/02_ngClass";
 
 const modules = [
-  NgRepeatModule
+  NgRepeatModule,
+  NgClassModule
 ];
 const appData = [];
 for(const module of modules) {

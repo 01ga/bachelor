@@ -46,8 +46,8 @@ function MigrationCheck(props) {
                             return (
                                 <tr key={index} className={active}>
                                     <td>{row.change}</td>
-                                    <td><pre>{row.ang}</pre></td>
-                                    <td><pre>{row.react}</pre></td>
+                                    <td><pre className="transparent">{row.ang}</pre></td>
+                                    <td><pre className="transparent">{row.react}</pre></td>
                                     <td><span title={title} className={row.isMigrationConform} aria-hidden="true"></span></td>
                                 </tr>
                             );

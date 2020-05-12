@@ -1,7 +1,8 @@
-angularjsApp.factory('dataService', function(ngRepeatData) {
+angularjsApp.factory('dataService', function(ngRepeatData, ngClassData) {
 
     const appData = [
-        ngRepeatData()
+        ngRepeatData(),
+        ngClassData()
     ];
 
     function unique(arr) {

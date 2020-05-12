@@ -35,7 +35,7 @@ const data = {
   article: {
     title:"ngRepeat",
     codeSnippets: [{
-      name:"first.js",
+      name:"code.js",
         lang:"js",
         code: 
         `function NgRepeat(props) {
@@ -137,7 +137,7 @@ const data = {
             isMigrationConform: MigrationClass.MAYBE
           },
           {
-            change: "Filtering und Alias",
+            change: "Filterung und Alias",
             ang: 
 `<div ng-repeat='val in arr | 
   filter: valFilter as result'>
