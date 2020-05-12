@@ -16,6 +16,16 @@ angularjsApp.controller(
     $anchorScroll.yOffset = 220;
     $anchorScroll();
  }
+
+ // Demonstration
+ $scope.hasTemplate = (article) => {
+  return article.templateUrl !== undefined;
+}
+
+  // to React Version Btn
+  $scope.hasReactAlternative = (article) => {
+    return article.reactLink !== undefined;
+  }
 });
 
 angularjsApp.directive('page', function() {

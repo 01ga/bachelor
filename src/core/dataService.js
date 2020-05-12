@@ -1,6 +1,6 @@
 import { NgRepeatModule } from "../declarativeRendering/presentation/dynamicRendering/01_ngRepeat";
-import { NgClassModule } from "../declarativeRendering/presentation/design/02_ngClass";
-import { NgStyleModule } from "../declarativeRendering/presentation/design/03_ngStyle";
+import { NgClassModule } from "../declarativeRendering/presentation/styling/02_ngClass";
+import { NgStyleModule } from "../declarativeRendering/presentation/styling/03_ngStyle";
 
 const modules = [
   NgRepeatModule,

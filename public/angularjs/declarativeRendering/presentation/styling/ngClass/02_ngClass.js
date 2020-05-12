@@ -54,7 +54,7 @@ const data = {
     color: green;
 }`
     }],
-        templateUrl: 'angularjs/declarativeRendering/presentation/design/ngClass/ngclass.html',
+        templateUrl: 'angularjs/declarativeRendering/presentation/styling/ngClass/ngclass.html',
         reactLink: "react-ngClass"
     }
 };

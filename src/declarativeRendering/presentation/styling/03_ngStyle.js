@@ -75,8 +75,10 @@ const data = {
         borderStyle: 'solid',
         borderWidth: '1px',
         borderRadius: '4px',
-        WebkitBoxShadow: 'inset 0 3px 6px rgba(0,0,0,.05)',
-        BoxShadow: 'inset 0 3px 6px rgba(0,0,0,.05)'
+        WebkitBoxShadow:
+            'inset 0 3px 6px rgba(0,0,0,.05)',
+        BoxShadow:
+            'inset 0 3px 6px rgba(0,0,0,.05)'
     }
 
     return <blockquote style={pStyle}>{html}</blockquote>;
@@ -103,14 +105,16 @@ const data = {
             ang: 
 `<div ng-style="{
     'margin-top': '15px',
-    '-webkit-box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)'
+    '-webkit-box-shadow':
+        'inset 0 3px 6px rgba(0,0,0,.05)'
 }">
     ...
 </div>`,
             react:
 `<div style={
     marginTop:' 15px',
-    WebkitBoxShadow: 'inset 0 3px 6px rgba(0,0,0,.05)'
+    WebkitBoxShadow:
+        'inset 0 3px 6px rgba(0,0,0,.05)'
 }>
     ...
 </div>`,

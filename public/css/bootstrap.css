@@ -1424,7 +1424,22 @@ a.bg-danger:focus {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eeeeee;
+}
+.page-article {
+  padding: 20px 20px;
+  margin: 20px 0;
+  border: 1px solid #dede;
+  border-radius: 4px;
+}
+.page-article h4,
+.page-article h5 {
+  color: #31b0d5;
+}
+.page-article h4 {
+  padding: 20px 0 15px;
+}
+.alternative-btn {
+  margin-top: 20px;
 }
 ul,
 ol {

@@ -1,4 +1,4 @@
-<article id="{{createUIId(article.title)}}">
+<article id="{{createUIId(article.title)}}" class="page-article">
     <h3 class="api" ng-bind="article.title"></h3>
     <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
     <p>To see the difference between static and fixed top navbars, just scroll.</p>
@@ -14,9 +14,11 @@
         </figure>
     </div>
     </div>
-    <h5>Ergebnis</h5>
+    <h5 ng-show="hasTemplate(article)">Ergebnis</h5>
     <ng-include src="article.templateUrl"></ng-include>
-    <p>
-      <a class="btn btn-lg btn-primary" ng-click="scrollTo(article.reactLink)" role="button">React Version »</a>
+    <h3 ng-show="!hasTemplate(article)" title="Funktioniert nur im Zusammenhang mit anderen AngularJS Komponenten"><span class="label label-warning glyphicon glyphicon-warning-sign" style="display: inline; margin-right:10px"></span>Das Feature ist Abhängig</h3>
+  <p class="alternative-btn">
+      <a class="btn btn-lg btn-primary" ng-show="hasReactAlternative(article)" ng-click="scrollTo(article.reactLink)" role="button">React Version »</a>
+      <h3 ng-show="!hasReactAlternative(article)"><span class="label label-danger glyphicon glyphicon-remove" style="display: inline; margin-right:10px"></span>Es gibt keine React Alternative</h3>
     </p>
   </article>

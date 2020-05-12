@@ -45,8 +45,10 @@ ng-style=
         'border-style': 'solid',
         'border-width': '1px',
         'border-radius': '4px',
-        '-webkit-box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)',
-        'box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)'
+        '-webkit-box-shadow':
+            'inset 0 3px 6px rgba(0,0,0,.05)',
+        'box-shadow':
+            'inset 0 3px 6px rgba(0,0,0,.05)'
     }">
 <span ng-repeat="item in data" 
     ng-class="item.itemClass"
@@ -55,7 +57,7 @@ ng-style=
 </span>
 </p>`
         }],
-            templateUrl: 'angularjs/declarativeRendering/presentation/design/ngStyle/ngstyle.html',
+            templateUrl: 'angularjs/declarativeRendering/presentation/styling/ngStyle/ngstyle.html',
             reactLink: "react-ngStyle"
         }
     };
