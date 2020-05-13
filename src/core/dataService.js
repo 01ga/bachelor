@@ -1,11 +1,13 @@
 import { NgRepeatModule } from "../declarativeRendering/presentation/dynamicRendering/01_ngRepeat";
 import { NgClassModule } from "../declarativeRendering/presentation/styling/02_ngClass";
 import { NgStyleModule } from "../declarativeRendering/presentation/styling/03_ngStyle";
+import { ATagModule } from "../declarativeRendering/presentation/uiElements/05_aTag";
 
 const modules = [
   NgRepeatModule,
   NgClassModule,
-  NgStyleModule
+  NgStyleModule,
+  ATagModule
 ];
 const appData = [];
 for(const module of modules) {
