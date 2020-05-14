@@ -10,7 +10,7 @@ import React from 'react';
  */
 export const MigrationClass = {
     YES: "glyphicon glyphicon-ok green",
-    NO: "glyphicon glyphicon-remove rad",
+    NO: "glyphicon glyphicon-remove red",
     MAYBE: "glyphicon glyphicon-pencil orange"
 }
 function MigrationCheck(props) {

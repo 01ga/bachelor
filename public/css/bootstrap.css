@@ -2663,6 +2663,9 @@ input[type="search"] {
   -moz-appearance: none;
   appearance: none;
 }
+input[type="email"]:invalid {
+	border-color: #d9534f;
+}
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
