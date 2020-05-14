@@ -3,13 +3,15 @@ import { NgClassModule } from "../declarativeRendering/presentation/styling/02_n
 import { NgStyleModule } from "../declarativeRendering/presentation/styling/03_ngStyle";
 import { ATagModule } from "../declarativeRendering/presentation/uiElements/05_aTag";
 import { FormElementsModule } from "../declarativeRendering/presentation/uiElements/06_formElements";
+import { PresentationLogicModule } from "../declarativeRendering/presentationConstraints/07_presentationLogic";
 
 const modules = [
   NgRepeatModule,
   NgClassModule,
   NgStyleModule,
   ATagModule,
-  FormElementsModule
+  FormElementsModule,
+  PresentationLogicModule
 ];
 const appData = [];
 for(const module of modules) {

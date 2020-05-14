@@ -112,7 +112,114 @@ const data = {
       name:"code.js",
         lang:"js",
         code: 
-``
+`export class  FormElements extends React.Component {
+	constructor(props) {
+		super(props);
+		this.countries = this.initCountries();
+		this.state = { user: { ... this.initData(), country: this.countries[2] }};
+	}
+	initData = () => {
+		return {
+			email: '',
+			pass: '',
+			subscribed: false
+		};
+	}
+	initCountries = () => {
+		return [
+			{name:'Austria', code: "AT"},
+			{name:'France', code: "FR"},
+			{name:'Germany', code:'DE'},
+			{name:'Luxembourg', code: "LU"},
+			{name:'Switzerland', code: "CH"}
+		];
+	}
+	// Explicitly bind data from ui into state
+	emailChanged = (e) => {
+		const value = e.target.value;
+		this.setState((prevState) =>{
+			return {user: { ...(prevState.user), email: value}}
+		});
+
+	};
+	passChanged = (e) => {
+		const value = e.target.value;
+		this.setState((prevState) =>{
+			return {user: { ...(prevState.user), pass: value}}
+		});
+
+	};
+	countryChanged = (value) => {
+		this.setState((prevState) =>{
+			return {user: { ...(prevState.user), country: value}}
+		});
+	};
+	checkChanged = (e) => {
+		this.setState((prevState) =>{
+			return {user: { ...(prevState.user), subscribed: !prevState.user.subscribed}}
+		});
+	}
+	submit = (e) => {
+		// NO DAFAULT BEHAVIOR PREVENTION
+		e.preventDefault();
+		this.processData(this.state.user);
+		this.resetForm();
+	}
+	processData = (data) => {
+		// data processing
+		console.log("Processing user data: " + JSON.stringify(data));
+	}
+	resetForm = () => {
+		this.setState({ user: this.initData() });
+	}
+
+	render() {
+    	return (
+			<form noValidate onSubmit={this.submit}>
+				<div className="form-group">
+					<label htmlFor="userEmail">Email address</label>
+					<input type="email" name="emailInput" value={this.state.user.email} 
+						onChange={this.emailChanged} className="form-control" id="userEmail" placeholder="Email"/>
+					<p className="help-block">You have entered: {this.state.user.email}</p>
+				</div>
+				<div className="form-group">
+					<label htmlFor="userPassword">Password</label>
+					<input type="password" name="passwordInput" value={this.state.user.pass}
+					 	onChange={this.passChanged} className="form-control" id="userPassword" placeholder="Password"/>
+					<p className="help-block">Your password is: {this.state.user.pass}</p>
+				</div>
+				<div className="form-group">
+					<label htmlFor="userCountry">Country</label>
+					<select className="form-control" name="select" id="userCountry" 
+						value={
+							(this.state && this.state.user && this.state.user.country)
+							 ? this.state.user.country.name
+							 : "Germany"
+						}
+						onChange={(e) => {
+							const name = e.target.value;
+							const value = this.countries.find(item => item.name === name);
+							this.countryChanged(value)}}>
+						{this.countries.map(
+							country => 
+							<option key={country.code} value={country.name}>{country.name}</option>
+						)}
+					</select>
+				</div>
+				<div className="checkbox">
+					<label>
+					<input type="checkbox" name="checkboxInput" onChange={this.checkChanged}
+					 value="this.state.user.subscribed"/> Subscribe to our E-mails
+					</label>
+					<p className="help-block">{ 
+						(this.state.user.subscribed) ? "You have been successfully subscribed" : "Not subscribed"
+					}</p>
+				</div>
+				<input id="submit" name="submitBtn" type="submit" className="btn btn-default" value="Submit"/>
+			</form>
+		);
+	}
+}`
     }],
       result: <FormElements/>,
       angularLink: "ang-formundinteraktiveElemente",

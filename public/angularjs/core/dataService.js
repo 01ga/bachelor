@@ -5,7 +5,8 @@ angularjsApp.factory('dataService',
         ngStyleData,
         validationStylingData,
         aTagData,
-        formElementsData) {
+		formElementsData,
+		presentationLogicData) {
 
     const appData = [
         ngRepeatData(),
@@ -13,7 +14,8 @@ angularjsApp.factory('dataService',
         ngStyleData(),
         validationStylingData(),
         aTagData(),
-        formElementsData()
+		formElementsData(),
+		presentationLogicData()
     ];
 
     function unique(arr) {
