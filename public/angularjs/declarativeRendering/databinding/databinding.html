@@ -1,0 +1,30 @@
+<div ng-controller="DataBindingCtrl"class="container">
+	
+	<h6>ng-bind</h6>
+	<div>
+		<p>Binds conten as a text:</p>
+		<p>
+			<span ng-bind="data.text"></span>
+			<span class='badge'>YES</span>
+		</p>
+	</div>
+
+	<h6>ng-bind-html</h6>
+	<div>
+		<p>Binds and parses conten as html:</p>
+		<p ng-bind-html="data.htmlText"></p>
+	</div>
+
+	<h6>ng-bind-template</h6>
+	<div>
+		<p>Binds conten with one or more interpolations:</p>
+		<p><span ng-bind-template="{{'Text with'}} {{'Bindings'}}"></span><span class='badge'>YES</span></p>
+	</div>
+
+	<h6>ng-include</h6>
+	<div>
+		<p>Includes external html: </p>
+		<p ng-include="data.templateLink"></p>
+	</div>
+
+</div>

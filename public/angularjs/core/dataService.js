@@ -9,7 +9,8 @@ angularjsApp.factory('dataService',
 		presentationLogicData,
 		validationConstraintsData,
 		textFilterData,
-		userInteractionsData) {
+		userInteractionsData,
+		dataBindingData) {
 
     const appData = [
         ngRepeatData(),
@@ -21,7 +22,8 @@ angularjsApp.factory('dataService',
 		presentationLogicData(),
 		validationConstraintsData(),
 		textFilterData(),
-		userInteractionsData()
+		userInteractionsData(),
+		dataBindingData()
     ];
 
     function unique(arr) {

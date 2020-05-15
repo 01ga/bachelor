@@ -1,1 +1,1 @@
-const angularjsApp = angular.module('angularjsApp',[]);
+const angularjsApp = angular.module('angularjsApp',['ngSanitize']);

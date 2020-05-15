@@ -5,6 +5,7 @@ import { ATagModule } from "../declarativeRendering/presentation/uiElements/05_a
 import { FormElementsModule } from "../declarativeRendering/presentation/uiElements/06_formElements";
 import { PresentationLogicModule } from "../declarativeRendering/presentationConstraints/07_presentationLogic";
 import { UserInteractionsModule } from "../declarativeRendering/behavior/10_userInteractions";
+import { DataBindingModule } from "../declarativeRendering/databinding/11_databinding";
 
 const modules = [
   NgRepeatModule,
@@ -13,7 +14,8 @@ const modules = [
   ATagModule,
   FormElementsModule,
   PresentationLogicModule,
-  UserInteractionsModule
+  UserInteractionsModule,
+  DataBindingModule
 ];
 const appData = [];
 for(const module of modules) {
