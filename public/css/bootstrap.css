@@ -2666,6 +2666,9 @@ input[type="search"] {
 input[type="email"]:invalid {
 	border-color: #d9534f;
 }
+input.ng-invalid { 
+	border-color: #d9534f;
+ }
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
