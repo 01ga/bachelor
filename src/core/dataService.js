@@ -4,6 +4,7 @@ import { NgStyleModule } from "../declarativeRendering/presentation/styling/03_n
 import { ATagModule } from "../declarativeRendering/presentation/uiElements/05_aTag";
 import { FormElementsModule } from "../declarativeRendering/presentation/uiElements/06_formElements";
 import { PresentationLogicModule } from "../declarativeRendering/presentationConstraints/07_presentationLogic";
+import { UserInteractionsModule } from "../declarativeRendering/behavior/10_userInteractions";
 
 const modules = [
   NgRepeatModule,
@@ -11,7 +12,8 @@ const modules = [
   NgStyleModule,
   ATagModule,
   FormElementsModule,
-  PresentationLogicModule
+  PresentationLogicModule,
+  UserInteractionsModule
 ];
 const appData = [];
 for(const module of modules) {
