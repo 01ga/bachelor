@@ -1,0 +1,40 @@
+<div>
+	<!--navigation-->
+	<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+		<div class="btn-group" role="group">
+		  <button type="button" class="btn btn-default"
+			  ng-class="ctrl.profileTabClass"
+			  ng-click="ctrl.togglePage('profile')">Profile</button>
+		</div>
+		<div class="btn-group" role="group">
+		  <button type="button" class="btn btn-default"
+		  	ng-class="ctrl.historyTabClass"
+		 	ng-click="ctrl.togglePage('history')">History</button>
+		</div>	
+	</div>
+	<!--User Profile-->
+	<div ng-if="ctrl.onProfilePage">
+	</br>
+		<p>
+			<span><strong>Username: </strong></span>
+			<span ng-bind="ctrl.data.user"></span>
+			<ul class="list-group">
+				<user-score data="ctrl.data.history[0]"></user-score>
+			</ul>
+		</p>
+		<div>
+			<p class="lead">Change Score: </p>
+			<button class="btn btn-default" ng-click="ctrl.incrementScore() ">Increment</button>
+			<span>  </span>
+			<button class="btn btn-default" ng-click="ctrl.decrementScore()">Decrement</button>	
+		</div>
+	</div>
+	<!--History-->
+	<div ng-if="!ctrl.onProfilePage">
+		<ul class="list-group">
+			<user-score ng-repeat="item in ctrl.data.history track by $index" data="item"></user-score>
+		</ul>
+	</div>
+</br>
+<time></time>
+</div>

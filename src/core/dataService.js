@@ -6,6 +6,10 @@ import { FormElementsModule } from "../declarativeRendering/presentation/uiEleme
 import { PresentationLogicModule } from "../declarativeRendering/presentationConstraints/07_presentationLogic";
 import { UserInteractionsModule } from "../declarativeRendering/behavior/10_userInteractions";
 import { DataBindingModule } from "../declarativeRendering/databinding/11_databinding";
+import { LifecycleHooksModule } from "../declarativeRendering/customDirectives/12_lifecycleHooks";
+import { CustomDirectiveDataBindingModule } from "../declarativeRendering/customDirectives/13_databinding";
+import { InterrelationsModule } from "../declarativeRendering/customDirectives/14_interrelations";
+import { DOMManipulationsModule } from "../declarativeRendering/customDirectives/15_manipulationsWithDOM";
 
 const modules = [
   NgRepeatModule,
@@ -15,7 +19,11 @@ const modules = [
   FormElementsModule,
   PresentationLogicModule,
   UserInteractionsModule,
-  DataBindingModule
+  DataBindingModule,
+  LifecycleHooksModule,
+  CustomDirectiveDataBindingModule,
+  InterrelationsModule,
+  DOMManipulationsModule
 ];
 const appData = [];
 for(const module of modules) {
