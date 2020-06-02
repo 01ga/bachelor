@@ -1,15 +1,15 @@
 <div ng-controller="CustomDirectiveDataBindingCtrl">
-	<p><strong>Value in External Scope: </strong><span ng-bind="value"></span></p>
-	<dir-without-scope></dir-without-scope>
-	<dir-with-scope controller-binding="value"></dir-with-scope>
-	<isolated-scope-dir external="value" controller-binding="value"></isolated-scope-dir>
+  <p><strong>Value in External Scope: </strong><span ng-bind="value"></span></p>
+  <dir-without-scope></dir-without-scope>
+  <dir-with-scope controller-binding="value"></dir-with-scope>
+  <isolated-scope-dir external="value" controller-binding="value"></isolated-scope-dir>
 </div>
 <div>
-	<h5>Demonstration of transclusion:</h5>
-	<dir-with-ng-transclusion>
-		Please, transclude this contetnt within a directive!
-	</dir-with-ng-transclusion>
-	<dir-with-link-transclusion>
-		Please, transclude this contetnt within a directive!
-	</dir-with-link-transclusion>
+  <h5>Demonstration of transclusion:</h5>
+  <dir-with-ng-transclusion>
+    Please, transclude this contetnt within a directive!
+  </dir-with-ng-transclusion>
+  <dir-with-link-transclusion>
+    Please, transclude this contetnt within a directive!
+  </dir-with-link-transclusion>
 </div>

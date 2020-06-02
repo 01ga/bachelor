@@ -249,27 +249,131 @@ const data = {
 		migrationCheckData: {
 		  info: [
 			{
-			  change: "Standard Text bindung von Scope an UI",
+			  change: "Direktiven ohne eigenen Scope",
 			  ang: 
-``,
+`// dirctive definition objekt
+{
+  scope: false,
+  template: '<span ng-bind="envVal"/>'
+}
+`,
 			  react:
-``,
+`function ComponentWithoutState(props) {
+  return <span>{props.envVal}</span>
+}
+`,
 			  isMigrationConform: MigrationClass.YES
 			},
 			{
-			  change: "Bindung von HTML",
+			  change: "Direktiven mit eigenem Scope",
 			  ang: 
-``,
+`// dirctive definition objekt
+{
+  scope: true,
+  controllerAs: "ctrl",
+  controller: function($scope) {
+    $scope.ctrl.value = "Internal";
+  },
+  template: 
+    '<span ng-bind="envVal"/>
+    <span ng-bind="ctrl.value"/>'
+}
+`,
 			  react:
-``,
+`
+class ComponentWithState extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value: "Internal"
+    }
+  }
+  rendern() {
+    return (<>
+      <spn>{this.props.envVal}</span>
+      <span>{this.sate.val}</span>
+    </>)
+  }
+}
+`,
 			  isMigrationConform: MigrationClass.YES
 			},
 			{
-			  change: "Bindung externer HTML",
+			  change: "Isolierter Scope",
 			  ang: 
-``,
+`// dirctive definition objekt
+{
+  scope: {external: "="},
+  controllerAs: "ctrl",
+  controller: function($scope) {
+    $scope.ctrl.value = "Internal";
+  },
+  template: 
+    '<span ng-bind="external"/>
+    <span ng-bind="ctrl.value"/>'
+}
+`,
 			  react:
-``,
+`class ComponentWithState extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value: "Internal"
+    }
+  }
+  rendern() {
+    return (<>
+      <spn>{this.props.envVal}</span>
+      <span>{this.sate.val}</span>
+    </>)
+  }
+}
+`,
+			  isMigrationConform: MigrationClass.YES
+			},
+			{
+			  change: "ngTransclude",
+			  ang: 
+`// dirctive definition objekt
+{
+  transclude: true,
+  template: '<span ng-transclude/>'
+}
+`,
+			  react:
+`
+function ComponentWithoutState(props) {
+  return <span>{props.envVal}</span>
+}
+`,
+			  isMigrationConform: MigrationClass.YES
+			},
+			{
+			  change: "Transclusion Funktion als Argument der link() und Manipulationen mit DOM",
+			  ang: 
+`// dirctive definition objekt
+{
+  transclude: true,
+  template: '<span/>',
+  link: 
+    function(scope, el, attr, ctrl,   
+    transcludeFn) {
+      el.find("#id").append(
+        transcludeFn()
+      );
+  }
+}
+`,
+			  react:
+`function DomTransclusionComp(props){
+  const ref = useRef(null);
+  useEffect(()=>{
+    ref.current.append(props.content)
+  }, [props.content]);
+  
+  return <span ref={ref}></span>;
+}
+`,
 			  isMigrationConform: MigrationClass.YES
 			}
 		  ]

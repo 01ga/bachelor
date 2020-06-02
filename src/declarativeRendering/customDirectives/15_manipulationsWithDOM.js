@@ -13,7 +13,6 @@ export class DOMManipulations extends React.Component {
 class DragbableBlock extends React.Component {
 	constructor(props) {
 		super(props);
-		this.document = document;
 		this.state = {
 				startX: 0, 
 				startY: 0, 
@@ -93,7 +92,6 @@ const data = {
 `lass DragbableBlock extends React.Component {
 	constructor(props) {
 		super(props);
-		this.document = document;
 		this.state = {
 				startX: 0, 
 				startY: 0, 
@@ -163,27 +161,36 @@ const data = {
 		migrationCheckData: {
 		  info: [
 			{
-			  change: "Standard Text bindung von Scope an UI",
+			  change: "Anhänden von Handler-Funktionen an DOM-Elemente",
 			  ang: 
-``,
+`// Direktive
+...
+link: function(scope, element, attr) {
+  element.on("mousedown", (e)=>{...});
+ $document.on("eventName", handlerFn);
+}
+`,
 			  react:
-``,
-			  isMigrationConform: MigrationClass.YES
-			},
-			{
-			  change: "Bindung von HTML",
-			  ang: 
-``,
-			  react:
-``,
-			  isMigrationConform: MigrationClass.YES
-			},
-			{
-			  change: "Bindung externer HTML",
-			  ang: 
-``,
-			  react:
-``,
+`// Komponente
+componentDidMount() {
+  document.addEventListener(
+    "eventName", handlerFn;
+  );
+}
+componentWillUnmount() {
+  document.removeEventListener(
+    "eventName", handlerFn;
+  );
+}
+...
+render() {
+  <div onMouseDown={(e) => {
+      const event = e;
+      ...
+    }
+  ></div>
+}
+`,
 			  isMigrationConform: MigrationClass.YES
 			}
 		  ]

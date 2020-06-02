@@ -18,6 +18,8 @@ export class LifecycleHooks extends React.Component {
 class UserProfile extends React.Component {
 	constructor(props) {
 		super(props);
+		// $postLink updating DOM alternative
+		// creating direct DOM reference to manipulate DOM manually
 		this.element = React.createRef();
 		// $onInit alternative
 		this.state={
@@ -40,18 +42,22 @@ class UserProfile extends React.Component {
 			user: "Oliver"
 		};
 	}
+	// alternative for accessing parent component within $onInit
+	// callback that is specified in child Props
 	setUserScoreCtrationTime = (creationTime) => {
+		// intercomponent comunication
+		// reading some info from child component
 		console.log("Instantiating userScore Component: " + creationTime.toLocaleString());
 	}
 
 	// $postLink updating DOM alternative
 	componentDidMount() {
 		this.prevTimeOfScoreChange = this.state.history[0].date;
+		// getting DOM element through reference
 		const node = this.element.current;
-		const doc = node.ownerDocument;
-		const p = doc.createElement("p");
+		const p = document.createElement("p");
 		p.textContent = "An Element appended to userProfile directive from componentDidMount() hook";
-		const br = doc.createElement("br");
+		const br = document.createElement("br");
 		node.appendChild(br);
 		node.appendChild(p);
 	}
@@ -68,11 +74,6 @@ class UserProfile extends React.Component {
 			}
 		}
 	};
-	getUserScoreCreationTime = (creationTime) => {
-		// intercomponent comunication
-		// reading some info from child component
-		console.log("Instantiating userScore directive: " + creationTime.toLocaleString());
-	}
 	togglePage = (source) => {
 		 if (source === "profile" && !this.state.onProfilePage) {
 			this.setState((prev) => {
@@ -141,7 +142,8 @@ class UserProfile extends React.Component {
 						<span><strong>Username: </strong></span>
 						<span>{this.state.user}</span>
 						<ul className="list-group">
-							<UserScore 
+							<UserScore
+								// callback to be used in child
 								setCreationTime={this.setUserScoreCtrationTime}
 								date={this.state.history[0].date} 
 								role={this.state.history[0].role} 
@@ -326,11 +328,6 @@ const data = {
 			}
 		}
 	};
-	getUserScoreCreationTime = (creationTime) => {
-		// intercomponent comunication
-		// reading some info from child component
-		console.log("Instantiating userScore directive: " + creationTime.toLocaleString());
-	}
 	togglePage = (source) => {
 		 if (source === "profile" && !this.state.onProfilePage) {
 			this.setState((prev) => {
@@ -532,27 +529,113 @@ const data = {
 		migrationCheckData: {
 		  info: [
 			{
-			  change: "Standard Text bindung von Scope an UI",
+			  change: "Initialisierung von Daten",
 			  ang: 
-``,
+`// im controller
+this.$onInit = () => {
+  $scope.ctrl.data = { … }
+};
+`,
 			  react:
-``,
+`// React Komponente
+constructor(props) {
+  super(props);
+  this.state = { … }
+}
+`,
 			  isMigrationConform: MigrationClass.YES
 			},
 			{
-			  change: "Bindung von HTML",
+			  change: "Unterkomponenten-Kommunikation: Kind greift auf eine Elternmethode zu",
 			  ang: 
-``,
+`// Kind-Controller
+this.$onInit = () => {	      
+  $scope.$parent.ctrl.parentFn(data);
+}
+
+// Eltern-Controller
+this.parentFn = (data) => { … }
+`,
 			  react:
-``,
+`// Kind-Komponente
+constructor(props) {
+ super(props);
+ props.callback(data);
+}
+
+//Eltern-Komponente
+parentFn = (data) => { … }
+...
+<Kind callback=parentFn />
+`,
 			  isMigrationConform: MigrationClass.YES
 			},
 			{
-			  change: "Bindung externer HTML",
+			  change: "$onChange wird in Kind-Komponente benutzt, um die geänderten in der Eltern-Komponente Daten zu klonen",
 			  ang: 
-``,
+`// Kind-Controller
+this.$onChanges = (changeObj) => {
+  const {currentValue, previousValue}     
+    = { ...changeObj.data};
+  if (changeObj.data.isFirstChange())    
+  { … };
+  $scope.childCtrl.data =    
+    currentValue.data;
+}
+`,
 			  react:
-``,
+`//Kind-Komponente
+constructor(props) {
+  super(props);
+  props.data; // immutable
+}
+`,
+			  isMigrationConform: MigrationClass.YES
+			},
+			{
+			  change: "direkte Manipulation mit DOM",
+			  ang: 
+`this.$postLink = () => {
+  $element.append('<p>text</p>');
+}
+`,
+			  react:
+`constructior(props) {
+  ...
+  this.element = React.createRef();
+componentDidMount() {
+  const node = this.element.current;
+  const p = document.createElement("p");
+  p.textContent = "Text";
+  node.appendChild(p);
+}
+render() {
+ return 
+   <div ref={this.element}>...</div>;
+}
+`,
+			  isMigrationConform: MigrationClass.YES
+			},
+			{
+			  change: "Aufräumen",
+			  ang: 
+`this.timeoutId = 
+$interval(callback, 1000);
+
+
+this.$onDestroy = () => {		 
+$interval.cancel(this.timeoutId);
+}
+`,
+			  react:
+`componentDidMount() {
+  this.timeoutId = setInterval(
+    callback,1000)};
+
+componentWillUnmount() {
+  clearInterval(this.timeoutId);
+}
+`,
 			  isMigrationConform: MigrationClass.YES
 			}
 		  ]

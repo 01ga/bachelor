@@ -225,30 +225,54 @@ const data = {
 		migrationCheckData: {
 		  info: [
 			{
-			  change: "Standard Text bindung von Scope an UI",
+			  change: "Übergabe der Steuerung von Kinder an Eltern",
 			  ang: 
-``,
+`// in Eltern-Direktive
+controller: function() {
+  ...
+  this.addChildScope = (childScope) =>   
+  {
+    // Kind-Direktive durch 
+    // childScope steuern
+  }
+}
+
+// in Kind-Direktive
+...
+scope: {},
+require: "^parentDirName",
+link: 
+  function(scope,el,attr,parentCtrl){
+    parentCtrl.addChildScope(scope);
+  }
+...
+`,
 			  react:
-``,
+`// Eltern-Komponente
+addChildState = (childState) => {
+  // Kind-Komponente durch 
+  // childState steuern
+}
+render() {
+  <ChildComponent 
+     addStateToParent=
+       {this.assChildState}
+  />
+}
+// Kind-Komponente
+function ChildComponent(props) {
+  let [data, setState] = useState(0);
+  useEffect(
+    () => {
+      props.addStateToParent(
+        [data,setState]
+      );
+    }, []
+  ); ...
+}
+`,
 			  isMigrationConform: MigrationClass.YES
-			},
-			{
-			  change: "Bindung von HTML",
-			  ang: 
-``,
-			  react:
-``,
-			  isMigrationConform: MigrationClass.YES
-			},
-			{
-			  change: "Bindung externer HTML",
-			  ang: 
-``,
-			  react:
-``,
-			  isMigrationConform: MigrationClass.YES
-			}
-		  ]
+			}]
 		} 
 	}
   };
