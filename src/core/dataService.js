@@ -10,6 +10,7 @@ import { LifecycleHooksModule } from "../declarativeRendering/customDirectives/1
 import { CustomDirectiveDataBindingModule } from "../declarativeRendering/customDirectives/13_databinding";
 import { InterrelationsModule } from "../declarativeRendering/customDirectives/14_interrelations";
 import { DOMManipulationsModule } from "../declarativeRendering/customDirectives/15_manipulationsWithDOM";
+import { BusinessLogicModule } from "../componentSystems/16_businessLogic";
 
 const modules = [
   NgRepeatModule,
@@ -23,7 +24,8 @@ const modules = [
   LifecycleHooksModule,
   CustomDirectiveDataBindingModule,
   InterrelationsModule,
-  DOMManipulationsModule
+  DOMManipulationsModule,
+  BusinessLogicModule
 ];
 const appData = [];
 for(const module of modules) {

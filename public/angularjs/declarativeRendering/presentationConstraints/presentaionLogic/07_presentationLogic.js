@@ -1,12 +1,17 @@
 angularjsApp.controller('PresentationLogicCtrl', ['$scope', function($scope) {
-	$scope.user = {
+  $scope.$watch('[user.address, user.telephone]',
+    () => {
+      $scope.canProceed = $scope.user.address !== "" && $scope.user.telephone !== "";
+    }
+  );
+  $scope.user = {
 		email: 'user@mail.com',
 		address: '',
 		telephone: '',
 		birthday: ''
 	 };
 	 $scope.selected = "address";
-	 $scope.canProceed = $scope.user.address === "" && $scope.user.telphone === "";
+	 $scope.canProceed = false;
 	 $scope.submit = () => {}
 }]);
 

@@ -109,7 +109,7 @@ function ResultFnCom (props){
 }
 const data = {
 	section: {
-		layer: "Deklaratives Rendern mit Angular", 
+		layer: "Deklaratives Rendern mit React", 
 		group: "Benutzerdefinierte Direktiven",
 		spec: "Interrelations"
 	},

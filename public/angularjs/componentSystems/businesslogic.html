@@ -1,0 +1,15 @@
+<div ng-controller="BusinessLogicCtrl">
+  <h6>Console Output:</h6>
+  <pre style="min-height:90px"><code ng-bind="msg"></code></pre>
+  <profiler></profiler>
+  <h6>Create new Profile: </h6>
+  <p>
+    <strong>User Name: </strong>
+    <input type="text" class="form-control" ng-model="newUser.name"/>
+  </p>
+  <p>
+    <strong>Score: </strong>
+    <input type="text" class="form-control" ng-model="newUser.score"/>
+  </p>
+  <button class="btn btn-success" ng-click="addProfile()">Add Profile</button>
+</div>

@@ -14,7 +14,8 @@ angularjsApp.factory('dataService',
 		lifecycleHooksData,
 		customDirectiveDataBindingData,
 		interrelationsData,
-		DOMManipulationsData) {
+    DOMManipulationsData,
+    businessLogicData) {
 
     const appData = [
         ngRepeatData(),
@@ -31,7 +32,8 @@ angularjsApp.factory('dataService',
 		lifecycleHooksData(),
 		customDirectiveDataBindingData(),
 		interrelationsData(),
-		DOMManipulationsData()
+    DOMManipulationsData(),
+    businessLogicData()
     ];
 
     function unique(arr) {

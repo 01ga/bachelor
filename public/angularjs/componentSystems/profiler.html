@@ -1,0 +1,34 @@
+<div>
+  <h6>Active change detection mode: </h6>
+  <span class="radio-inline">
+    <label>
+      <input type="radio" ng-model="detectionLevel" ng-value="1">
+      By Reference
+    </label>
+  </span>
+  <span class="radio-inline">
+    <label>
+      <input type="radio" ng-model="detectionLevel" ng-value="2">
+      By Collection
+    </label>
+  </span>
+  <span class="radio-inline">
+    <label>
+      <input type="radio" ng-model="detectionLevel" ng-value="3">
+      By Value
+    </label>
+  </span>
+</div>
+<br/>
+<button class="btn btn-info" ng-click="onClear()">Clear Profiler</button>
+<button class="btn btn-info" ng-click="onReinit()">Reinit Profiler</button>
+<button id="externalInsertBtn" class="btn btn-warning pull-right">Insert External Profile</button>
+<br/>
+<ul class="list-group" id="profileList">
+  <li class="list-group-item" ng-repeat="profile in users track by $index">
+    <span><strong ng-bind="profile.name"> </strong></span>
+    <button class="pull-right" ng-click="onDelete(profile)">Delete</button>
+    <input type="text" style="margin:0 10px" class="pull-right" ng-model="profile.score"/>
+    <strong class="pull-right">Score: </strong>
+  </li>
+</ul>

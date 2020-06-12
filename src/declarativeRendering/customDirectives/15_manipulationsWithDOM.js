@@ -79,7 +79,7 @@ class DragbableBlock extends React.Component {
 
 const data = {
 	section: {
-		layer: "Deklaratives Rendern mit Angular", 
+		layer: "Deklaratives Rendern mit React", 
 		group: "Benutzerdefinierte Direktiven",
 		spec: "Einbindung des Verhaltens und Aktualisieren von DOM"
 	},
