@@ -18,22 +18,22 @@ angularjsApp.factory('dataService',
     businessLogicData) {
 
     const appData = [
-        ngRepeatData(),
-        ngClassData(),
-        ngStyleData(),
-        validationStylingData(),
-        aTagData(),
-		formElementsData(),
-		presentationLogicData(),
-		validationConstraintsData(),
-		textFilterData(),
-		userInteractionsData(),
-		dataBindingData(),
-		lifecycleHooksData(),
-		customDirectiveDataBindingData(),
-		interrelationsData(),
-    DOMManipulationsData(),
-    businessLogicData()
+      ngRepeatData(),
+      ngClassData(),
+      ngStyleData(),
+      aTagData(),
+      formElementsData(),
+      validationStylingData(),
+      presentationLogicData(),
+      validationConstraintsData(),
+      textFilterData(),
+      userInteractionsData(),
+      dataBindingData(),
+      lifecycleHooksData(),
+      customDirectiveDataBindingData(),
+      interrelationsData(),
+      DOMManipulationsData(),
+      businessLogicData()
     ];
 
     function unique(arr) {

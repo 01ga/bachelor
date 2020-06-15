@@ -11,7 +11,6 @@ html {
 }
 body {
   margin: 0;
-  padding-top: 120px;
 }
 article,
 aside,
@@ -103,6 +102,10 @@ hr {
   box-sizing: content-box;
   height: 0;
 }
+.fixed-code-block {
+  max-height: 400px;
+  overflow-y: scroll;
+}
 pre {
   overflow: auto;
 }
@@ -120,7 +123,7 @@ select,
 textarea {
   color: inherit;
   font: inherit;
-  margin: 0;
+  margin: 2.5px;
 }
 button {
   overflow: visible;
@@ -1076,6 +1079,9 @@ th {
 .red {
   color: red;
 }
+.content-wrapper {
+  padding: 25px;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1421,22 +1427,16 @@ a.bg-danger:hover,
 a.bg-danger:focus {
   background-color: #e4b9b9;
 }
-.page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-}
 .page-article {
-  padding: 20px 20px;
-  margin: 20px 0;
+  padding: 0 20px;
+  margin: 10px 0;
   border: 1px solid #dede;
   border-radius: 4px;
+  background-color: #fefefe;
 }
 .page-article h4,
 .page-article h5 {
   color: #31b0d5;
-}
-.page-article h4 {
-  padding: 20px 0 15px;
 }
 .right-padding {
   padding-right: 20px;
@@ -1444,8 +1444,11 @@ a.bg-danger:focus {
 .alternative-btn {
   margin-top: 20px;
 }
+.help-block.help-block-red {
+  color: red;
+}
 .result-box {
-  padding: 45px 15px;
+  padding: 15px;
   margin: 20px 0;
   border-color: #e5e5e5 #eee #eee;
   border-style: solid;
@@ -4142,9 +4145,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li > a > img {
   max-width: none;
-}
-.nav-tabs {
-  border-bottom: 1px solid #ddd;
 }
 .nav-tabs > li {
   float: left;

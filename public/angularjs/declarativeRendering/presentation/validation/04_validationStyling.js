@@ -1,9 +1,9 @@
 angularjsApp.factory('validationStylingData', function() {
     const data = {
         section: {
-        layer: "Deklaratives Rendern mit Angular", 
-        group: "Darstellung",
-        spec: "Validierungs- und Fehlergestaltung"
+        layer: "I. Deklaratives Rendern mit Angular", 
+        group: "1.1. Darstellung",
+        spec: "1.1.4. Validierungs- und Fehlergestaltung"
         },
         article: {
         title:"Form und Input Validierungsklassen",

@@ -168,12 +168,12 @@ angularjsApp.directive('time', function ($interval) {
 angularjsApp.factory('lifecycleHooksData', function () {
   const data = {
     section: {
-      layer: "Deklaratives Rendern mit Angular",
-      group: "Benutzerdefinierte Direktiven",
-      spec: "Lebenszyklus-Hooks"
+      layer: "I. Deklaratives Rendern mit Angular",
+      group: "1.5. Benutzerdefinierte Direktiven",
+      spec: "1.5.1. Lebenszyklus-Hooks"
     },
     article: {
-      title: "Lebenszyklus-Hooks",
+      title: "$onInit, $onChanges, $onDestroy, $postLink, $doCheck",
       codeSnippets: [{
         name: "controller.js",
         lang: "js",
@@ -184,7 +184,7 @@ angularjsApp.factory('lifecycleHooksData', function () {
   MUSTER: 5
 }
 
-angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($scope, $element) {
+app.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($scope, $element) {
   $scope.ctrl.onProfilePage = true;
   $scope.ctrl.togglePage = (source) => {
     if (source === "profile" && !$scope.ctrl.onProfilePage) {
@@ -258,7 +258,7 @@ angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($
         name: "profile.js",
         lang: "js",
         code:
-`angularjsApp.directive('userProfile', function () {
+`app.directive('userProfile', function () {
   return {
     restrict: "E",
     controller: "LifecycleHooksCtrl",
@@ -284,7 +284,7 @@ angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($
 </div>
 <!--User Profile-->
 <div ng-if="ctrl.onProfilePage">
-  </br>
+  <br/>
   <p>
     <span><strong>Username: </strong></span>
     <span ng-bind="ctrl.data.user"></span>
@@ -305,14 +305,14 @@ angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($
     <user-score ng-repeat="item in ctrl.data.history track by $index" data="item"></user-score>
   </ul>
 </div>
-</br>
+<br/>
 <time></time>
 </div>`
       },{
         name: "scope.js",
         lang: "js",
         code:
-`angularjsApp.directive('userScore', function () {
+`app.directive('userScore', function () {
   return {
     restrict: "E",
     templateUrl: "./score.html",
@@ -349,7 +349,7 @@ angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($
       }
 
       this.$onInit = () => {
-        // (ii) intercontroller comunication
+        // intercontroller comunication
         // register behavior in parent ctrl
         $scope.$parent.ctrl.setUserScoreCreationTime(new Date());
       }
@@ -392,7 +392,7 @@ angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($
         name: "time.js",
         lang: "js",
         code:
-`angularjsApp.directive('time', function ($interval) {
+`app.directive('time', function ($interval) {
   return {
     restrict: "E",
     controller: function TimeCtrl($scope) {
@@ -417,7 +417,7 @@ angularjsApp.controller('LifecycleHooksCtrl', ['$scope', '$element', function ($
 });`
       }],
       templateUrl: 'angularjs/declarativeRendering/customDirectives/lifecycleHooks/lifecyclehooks.html',
-      reactLink: "react-Lebenszyklus-Hooks"
+      reactLink: "react-Alternativefür$onInit,$onChanges,$onDestroy,$postLink,$doCheck"
     }
   };
   return function () {

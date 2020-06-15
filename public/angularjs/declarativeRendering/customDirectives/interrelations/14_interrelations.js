@@ -48,7 +48,7 @@ angularjsApp.directive('calculateDir', function () {
       `<p>
 				<strong>First Argument: </strong>
 				<input type="text" ng-model="arg1"/>
-			</p>
+      </p>
 			<p>
 				<strong>Second Argument: </strong>
 				<input type="text" ng-model="arg2"/>
@@ -86,17 +86,17 @@ angularjsApp.directive('displayResultDir', function () {
 angularjsApp.factory('interrelationsData', function () {
   const data = {
     section: {
-      layer: "Deklaratives Rendern mit Angular",
-      group: "Benutzerdefinierte Direktiven",
-      spec: "Interrelations"
+      layer: "I. Deklaratives Rendern mit Angular",
+      group: "1.5. Benutzerdefinierte Direktiven",
+      spec: "1.5.3. Interrelations"
     },
     article: {
-      title: "Interrelations",
+      title: "require",
       codeSnippets: [{
         name: "calculateDir.js",
         lang: "js",
         code:
-`angularjsApp.directive('calculateDir', function () {
+`app.directive('calculateDir', function () {
   const Opreations = {
     ADD: "add",
     SUBTRACT: "subtr",
@@ -146,29 +146,29 @@ angularjsApp.factory('interrelationsData', function () {
         name: "calculate.html",
         lang: "html",
         code:
-          `<p>
-<strong>First Argument: </strong>
-<input type="text" ng-model="arg1"/>
+`<p>
+  <strong>First Argument: </strong>
+  <input type="text" ng-model="arg1"/>
 </p>
 <p>
-<strong>Second Argument: </strong>
-<input type="text" ng-model="arg2"/>
+  <strong>Second Argument: </strong>
+  <input type="text" ng-model="arg2"/>
 </p>
 <p>
-<strong>Select operation: </strong>
-<p>
-  <button ng-click="ctrl.calculate('add')">ADD</button>
-  <button ng-click="ctrl.calculate('subtr')">SUBTRACT</button>
-  <button ng-click="ctrl.calculate('mult')">MULTIPLY</button>
-  <button ng-click="ctrl.calculate('div')">DIVIDE</button>
-</p>
-<display-result-dir></display-result-dir>
+  <strong>Select operation: </strong>
+  <p>
+    <button ng-click="ctrl.calculate('add')">ADD</button>
+    <button ng-click="ctrl.calculate('subtr')">SUBTRACT</button>
+    <button ng-click="ctrl.calculate('mult')">MULTIPLY</button>
+    <button ng-click="ctrl.calculate('div')">DIVIDE</button>
+  </p>
+  <display-result-dir></display-result-dir>
 </p>`
       }, {
         name: "resultDir.js",
         lang: "js",
         code:
-          `angularjsApp.directive('displayResultDir', function() {
+`app.directive('displayResultDir', function() {
   return {
     restrict: "E",
     scope: {},
@@ -183,14 +183,14 @@ angularjsApp.factory('interrelationsData', function () {
         name: "result.html",
         lang: "html",
         code:
-          `<p>
-<strong>Result: </strong>
-<span ng-bind="result"/>
+`<p>
+  <strong>Result: </strong>
+  <span ng-bind="result"/>
 </p>`
       }
       ],
       templateUrl: 'angularjs/declarativeRendering/customDirectives/interrelations/interrelations.html',
-      reactLink: "react-Interrelations"
+      reactLink: "react-Alternativefürrequire"
     }
   };
   return function () {

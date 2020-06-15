@@ -12,7 +12,7 @@
   </div>
   <!--User Profile-->
   <div ng-if="ctrl.onProfilePage">
-    </br>
+    <br/>
     <p>
       <span><strong>Username: </strong></span>
       <span ng-bind="ctrl.data.user"></span>
@@ -33,6 +33,6 @@
       <user-score ng-repeat="item in ctrl.data.history track by $index" data="item"></user-score>
     </ul>
   </div>
-  </br>
+  <br/>
   <time></time>
 </div>

@@ -39,9 +39,9 @@ export function ATag(props) {
 
 const data = {
   section: {
-    layer: "Deklaratives Rendern mit React", 
-    group: "Darstellung",
-    spec: "Gestaltung"
+    layer: "I. Deklaratives Rendern mit React", 
+    group: "1.1. Darstellung",
+    spec: "1.1.3. Definition von UI-Elementen"
   },
   article: {
     title:"a",

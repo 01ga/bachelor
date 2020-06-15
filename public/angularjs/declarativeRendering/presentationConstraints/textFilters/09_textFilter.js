@@ -1,55 +1,55 @@
-angularjsApp.controller('TextFilterCtrl', function($scope, $filter) {
-	$scope.originalText = 'Sample Text';
-	$scope.filteredText = $filter('uppercase')($scope.originalText);
-	$scope.originalNumber = 123456789;
+angularjsApp.controller('TextFilterCtrl', function ($scope, $filter) {
+  $scope.originalText = 'Sample Text';
+  $scope.filteredText = $filter('uppercase')($scope.originalText);
+  $scope.originalNumber = 123456789;
 });
 
 
-angularjsApp.factory('textFilterData', function() {
-const data = {
+angularjsApp.factory('textFilterData', function () {
+  const data = {
     section: {
-    layer: "Deklaratives Rendern mit Angular", 
-    group: "Darstellungsbedingungen",
-    spec: "Text-Filter"
+      layer: "I. Deklaratives Rendern mit Angular",
+      group: "1.2. Darstellungsbedingungen",
+      spec: "1.2.3. Text-Filter"
     },
     article: {
-    title:"Text-Filter",
-    codeSnippets: [{
-        name:"controller.js",
-        lang:"js",
+      title: "{{'string' | filtername: args}}",
+      codeSnippets: [{
+        name: "controller.js",
+        lang: "js",
         code:
-`angularjsApp.controller('TextFilterCtrl', function($scope, $filter) {
-	$scope.originalText = 'Sample Text';
-	$scope.filteredText = $filter('uppercase')($scope.originalText);
-	$scope.originalNumber = 123456789;
+`app.controller('TextFilterCtrl', function ($scope, $filter) {
+  $scope.originalText = 'Sample Text';
+  $scope.filteredText = $filter('uppercase')($scope.originalText);
+  $scope.originalNumber = 123456789;
 });`
-    },
-    {
-        name:"index.html",
-        lang:"html",
+      },
+      {
+        name: "index.html",
+        lang: "html",
         code:
-`<div ng-controller="TextFilterCtrl">	
+`<div ng-controller="TextFilterCtrl">
 <blockquote>
-	<p>{{ originalText }}</p>
-	<footer>Original text</footer>
-	<br/>
-	<p>{{ filteredText }}</p>
-	<footer>Text after applience of <cite>upprecase</cite> filter</footer>
+  <p>{{ originalText }}</p>
+  <footer>Original text</footer>
+  <br />
+  <p>{{ filteredText }}</p>
+  <footer>Text after applience of <cite>upprecase</cite> filter</footer>
 </blockquote>
 <blockquote>
-	<p>{{ originalNumber }}</p>
-	<footer>Original Number</footer>
-	<br/>
-	<p>{{ originalNumber | currency }}</p>
-	<footer>Number after applience of <cite>currency</cite> filter</footer>
+  <p>{{ originalNumber }}</p>
+  <footer>Original Number</footer>
+  <br />
+  <p>{{ originalNumber | currency }}</p>
+  <footer>Number after applience of <cite>currency</cite> filter</footer>
 </blockquote>
 </div>`
-	}],
-        templateUrl: 'angularjs/declarativeRendering/presentationConstraints/textFilters/textfilter.html',
-        reactLink: undefined
+      }],
+      templateUrl: 'angularjs/declarativeRendering/presentationConstraints/textFilters/textfilter.html',
+      reactLink: undefined
     }
-};
-    return function() {
+  };
+  return function () {
     return data;
-    };
+  };
 });

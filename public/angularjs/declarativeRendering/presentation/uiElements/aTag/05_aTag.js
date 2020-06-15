@@ -1,9 +1,9 @@
 angularjsApp.factory('aTagData', function() {
     const data = {
         section: {
-        layer: "Deklaratives Rendern mit Angular", 
-        group: "Darstellung",
-        spec: "Definition von UI-Elementen"
+        layer: "I. Deklaratives Rendern mit Angular", 
+        group: "1.1. Darstellung",
+        spec: "1.1.3. Definition von UI-Elementen"
         },
         article: {
         title:"a",

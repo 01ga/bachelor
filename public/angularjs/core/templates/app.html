@@ -1,9 +1,9 @@
 <section ng-repeat="section in data">
-    <h1 id="{{createUIId(section.layer)}}" class="text-center" ng-bind="section.layer"></h1>
+    <h3 id="{{createUIId(section.layer)}}" ng-bind="section.layer"></h3>
     <div ng-repeat="h2 in section.groups">
-        <h2  id="{{createUIId(h2.group)}}" class="text-center" ng-bind="h2.group"></h2>
+        <h4  id="{{createUIId(h2.group)}}" ng-bind="h2.group"></h4>
         <div ng-repeat="h3 in h2.specs">
-            <h3 id="{{createUIId(h3.spec)}}" class="page-header" ng-bind="h3.spec"></h3>
+            <h4 id="{{createUIId(h3.spec)}}" class="page-header" ng-bind="h3.spec"></h4>
             <ang-article ng-repeat="article in h3.articles" article="article"/>
         </div>
     </div>

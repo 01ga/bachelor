@@ -1,42 +1,42 @@
-angularjsApp.controller('UserInteractionsCtrl', function($scope) {
-	$scope.onClick = () => $scope.value++;
-	$scope.value = 1;
+angularjsApp.controller('UserInteractionsCtrl', function ($scope) {
+  $scope.onClick = () => $scope.value++;
+  $scope.value = 1;
 });
 
 
-angularjsApp.factory('userInteractionsData', function() {
-const data = {
+angularjsApp.factory('userInteractionsData', function () {
+  const data = {
     section: {
-    layer: "Deklaratives Rendern mit Angular", 
-    group: "Verhalten",
-    spec: "Bearbeitung von Benutzer-Interaktionen"
+      layer: "I. Deklaratives Rendern mit Angular",
+      group: "1.3. Verhalten",
+      spec: "1.3.1. Bearbeitung von Benutzer-Interaktionen"
     },
     article: {
-    title:"Event Listeners",
-    codeSnippets: [{
-        name:"controller.js",
-        lang:"js",
+      title: "Event Listeners",
+      codeSnippets: [{
+        name: "controller.js",
+        lang: "js",
         code:
-`angularjsApp.controller('UserInteractionsCtrl', function($scope) {
-	$scope.onClick = () => $scope.value++;
-	$scope.value = 1;
+`App.controller('UserInteractionsCtrl', function ($scope) {
+  $scope.onClick = () => $scope.value++;
+  $scope.value = 1;
 });`
-    },
-    {
-        name:"index.html",
-        lang:"html",
+      },
+      {
+        name: "index.html",
+        lang: "html",
         code:
 `<div ng-controller="UserInteractionsCtrl">
 <p class="lead">Score: <span class="badge">{{value}}</span></p>
 <button class="btn btn-default" ng-click="onClick()">Increment</button>
-<button class="btn btn-default" ng-click="value=value-1">Decrement</button>	
+<button class="btn btn-default" ng-click="value=value-1">Decrement</button>
 </div>`
-	}],
-        templateUrl: 'angularjs/declarativeRendering/behavior/userinteractions.html',
-        reactLink: "react-EventListeners"
+      }],
+      templateUrl: 'angularjs/declarativeRendering/behavior/userinteractions.html',
+      reactLink: "react-EventListeners"
     }
-};
-    return function() {
+  };
+  return function () {
     return data;
-    };
+  };
 });

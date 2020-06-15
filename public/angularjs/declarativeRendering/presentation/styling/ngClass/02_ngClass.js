@@ -9,9 +9,9 @@ angularjsApp.controller('NgClassCtrl', ['$scope', function($scope) {
 angularjsApp.factory('ngClassData', function() {
 const data = {
     section: {
-    layer: "Deklaratives Rendern mit Angular", 
-    group: "Darstellung",
-    spec: "Gestaltung"
+    layer: "I. Deklaratives Rendern mit Angular", 
+    group: "1.1. Darstellung",
+    spec: "1.1.2. Gestaltung"
     },
     article: {
     title:"ngClass",
@@ -19,12 +19,12 @@ const data = {
         name:"controller.js",
         lang:"js",
         code:
-`angularjsApp.controller('NgClassCtrl', ['$scope', function($scope) {
-    $scope.dataList = [
-        { itemText: "Kleingeschriebener Text", itemClass: "text-lowercase" },
-        { itemText: "Großgeschriebener Text", itemClass: "text-uppercase" },
-        { itemText: "Die ersten Buchstaben großgeschrieben", itemClass: "text-capitalize" }
-    ];
+`app.controller('NgClassCtrl', ['$scope', function($scope) {
+  $scope.dataList = [
+      { itemText: "Kleingeschriebener Text", itemClass: "text-lowercase" },
+      { itemText: "Großgeschriebener Text", itemClass: "text-uppercase" },
+      { itemText: "Die ersten Buchstaben großgeschrieben", itemClass: "text-capitalize" }
+  ];
 }]);`
     },
     {
@@ -33,12 +33,9 @@ const data = {
         code:
 `<div ng-controller="NgClassCtrl">
 <blockquote>
-   <p ng-repeat="item in dataList track by item.itemText"
-        ng-class="item.itemClass"
-        ng-classOdd="'thumbnail'"
-        ng-classEven="'green'"
-        ng-bind="item.itemText">
-    </p>
+  <p ng-repeat="item in dataList track by item.itemText" ng-class="item.itemClass" ng-class-odd="'thumbnail'"
+    ng-class-even="'green'" ng-bind="item.itemText">
+  </p>
 </blockquote>
 </div>`
     },
@@ -55,7 +52,7 @@ const data = {
 }`
     }],
         templateUrl: 'angularjs/declarativeRendering/presentation/styling/ngClass/ngclass.html',
-        reactLink: "react-ngClass"
+        reactLink: "react-AlternativefürngClass"
     }
 };
     return function() {

@@ -38,50 +38,50 @@ export function NgStyle(props) {
 
 const data = {
   section: {
-    layer: "Deklaratives Rendern mit React", 
-    group: "Darstellung",
-    spec: "Gestaltung"
+    layer: "I. Deklaratives Rendern mit React", 
+    group: "1.1. Darstellung",
+    spec: "1.1.2. Gestaltung"
   },
   article: {
-    title:"ngStyle",
+    title:"Alternative für ngStyle",
     codeSnippets: [{
       name:"code.js",
         lang:"js",
         code: 
 `function NgStyle(props) {
 
-    const  dataList = [
-        {itemClass: "label label-default", itemText: "Default", additionalStyles: {marginRight:'15px', padding: '4px', borderRadius: '0px'}},
-        {itemClass: "label label-primary", itemText: "Primary", additionalStyles: {marginRight:'15px', padding: '8px', borderRadius: '4px'}},
-        {itemClass: "label label-success", itemText: "Success", additionalStyles: {marginRight:'15px', padding: '12px', borderRadius: '8px'}},
-        {itemClass: "label label-info", itemText: "Info", additionalStyles: {marginRight:'15px', padding: '16px', borderRadius: '12px'}},
-        {itemClass: "label label-warning", itemText: "Warning", additionalStyles: {marginRight:'15px', padding: '20px', borderRadius: '16px'}},
-        {itemClass: "label label-danger", itemText: "Danger", additionalStyles: {padding: '24px', borderRadius: '20px'}}
-    ];
+  const  dataList = [
+      {itemClass: "label label-default", itemText: "Default", additionalStyles: {marginRight:'15px', padding: '4px', borderRadius: '0px'}},
+      {itemClass: "label label-primary", itemText: "Primary", additionalStyles: {marginRight:'15px', padding: '8px', borderRadius: '4px'}},
+      {itemClass: "label label-success", itemText: "Success", additionalStyles: {marginRight:'15px', padding: '12px', borderRadius: '8px'}},
+      {itemClass: "label label-info", itemText: "Info", additionalStyles: {marginRight:'15px', padding: '16px', borderRadius: '12px'}},
+      {itemClass: "label label-warning", itemText: "Warning", additionalStyles: {marginRight:'15px', padding: '20px', borderRadius: '16px'}},
+      {itemClass: "label label-danger", itemText: "Danger", additionalStyles: {padding: '24px', borderRadius: '20px'}}
+  ];
 
-    const html = dataList.map(item => {
-        return (
-            <span key={item.itemText}
-                className={item.itemClass} style={item.additionalStyles}>
-                {item.itemText}
-            </span>
-        );
-    });
+  const html = dataList.map(item => {
+      return (
+          <span key={item.itemText}
+              className={item.itemClass} style={item.additionalStyles}>
+              {item.itemText}
+          </span>
+      );
+  });
 
-    const pStyle = {  
-        padding: '45px 15px',
-        margin: '20px 0',
-        borderColor: '#e5e5e5 #eee #eee',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderRadius: '4px',
-        WebkitBoxShadow:
-            'inset 0 3px 6px rgba(0,0,0,.05)',
-        BoxShadow:
-            'inset 0 3px 6px rgba(0,0,0,.05)'
-    }
+  const pStyle = {  
+      padding: '45px 15px',
+      margin: '20px 0',
+      borderColor: '#e5e5e5 #eee #eee',
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      borderRadius: '4px',
+      WebkitBoxShadow:
+          'inset 0 3px 6px rgba(0,0,0,.05)',
+      BoxShadow:
+          'inset 0 3px 6px rgba(0,0,0,.05)'
+  }
 
-    return <blockquote style={pStyle}>{html}</blockquote>;
+  return <blockquote style={pStyle}>{html}</blockquote>;
 
 }`
     }],

@@ -26,12 +26,12 @@ export function NgClass(props) {
 
 const data = {
   section: {
-    layer: "Deklaratives Rendern mit React", 
-    group: "Darstellung",
-    spec: "Gestaltung"
+    layer: "I. Deklaratives Rendern mit React", 
+    group: "1.1. Darstellung",
+    spec: "1.1.2. Gestaltung"
   },
   article: {
-    title:"ngClass",
+    title:"Alternative für ngClass",
     codeSnippets: [{
       name:"code.js",
         lang:"js",

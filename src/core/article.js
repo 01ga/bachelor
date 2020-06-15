@@ -44,7 +44,7 @@ class CodeTabs extends Component {
           <div key={snippet.name} 
             className={ (index !== this.state.activeTabIndex) ? "hidden" : ""}>
               <figure className="highlight">
-                  <pre><code className={"prettyprint lang-"+snippet.lang}>{snippet.code}</code></pre>
+                  <pre className="fixed-code-block"><code className={"prettyprint lang-"+snippet.lang}>{snippet.code}</code></pre>
               </figure>
           </div>
         )
@@ -71,19 +71,16 @@ function Article(props) {
   return (
     <article id={props.id} className="page-article">
       <h3 className="api">{props.title}</h3>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <h4>Beispiel</h4>
-      <h5>Code</h5>
+      <h5>Code Beispiel</h5>
       <CodeTabs codeSnippets={props.codeSnippets}/>
       <h5>Ergebnis</h5>
       {props.result}
-      <h4>Migration Prüfung</h4>
+      <h5>Migration Prüfung</h5>
       <div style={{overflowX: "auto"}}>
         <MigrationCheck {... props.migrationCheck} />
       </div>  
       <p className="alternative-btn">
-        <a className="btn btn-lg btn-primary" href={"#" + props.angularLink} role="button">AngularJS Version »</a>
+        <a className="btn btn-lg btn-info" href={"#" + props.angularLink} role="button">AngularJS Version »</a>
       </p>
     </article>
   );

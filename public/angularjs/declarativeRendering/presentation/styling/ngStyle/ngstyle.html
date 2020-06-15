@@ -1,17 +1,13 @@
-<p ng-controller="NgStyleCtrl" 
-    ng-style=
-        "{  'padding': '45px 15px',
-            'margin': '20px 0',
-            'border-color': '#e5e5e5 #eee #eee',
-            'border-style': 'solid',
-            'border-width': '1px',
-            'border-radius': '4px',
-            '-webkit-box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)',
-            'box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)'
-        }">
-    <span ng-repeat="item in data" 
-        ng-class="item.itemClass"
-        ng-style="item.additionalStyles"
-        ng-bind="item.itemText">
-    </span>
+<p ng-controller="NgStyleCtrl" ng-style="{
+  'padding': '45px 15px',
+  'margin': '20px 0',
+  'border-color': '#e5e5e5 #eee #eee',
+  'border-style': 'solid',
+  'border-width': '1px',
+  'border-radius': '4px',
+  '-webkit-box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)',
+  'box-shadow': 'inset 0 3px 6px rgba(0,0,0,.05)'
+}">
+  <span ng-repeat="item in data" ng-class="item.itemClass" ng-style="item.additionalStyles" ng-bind="item.itemText">
+  </span>
 </p>

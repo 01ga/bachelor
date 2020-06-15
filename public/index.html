@@ -18,97 +18,157 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="./sideMenu/css/BootSideMenu.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">UI Migration</a>
+    <!--Navigation -->
+    <div id="main-nav">
+      <h5>UI Migration</h5>
+      <div class="list-group">
+
+      <a href="#item-ang" data-toggle="collapse" class="list-group-item base">Angular</a>
+      <div class="list-group collapse" id="item-ang">
+
+        <a href="#item-ang-I" data-toggle="collapse" class="list-group-item">I. Deklaratives Rendern</a>
+        <div class="list-group collapse" id="item-ang-I">
+
+          <a href="#item-ang-1_1" data-toggle="collapse" class="list-group-item">1.1. Darstellung</a>
+          <div class="list-group collapse" id="item-ang-1_1">
+            <a href="#ang-1.1.1.DynamischesRendering" class="list-group-item">1.1.1. Dynamisches Rendering</a>
+            <a href="#ang-ngRepeat" class="list-group-item api">ngRepeat</a>
+            <a href="#ang-1.1.2.Gestaltung" class="list-group-item">1.1.2. Gestaltung</a>
+            <a href="#ang-ngClass" class="list-group-item api">ngClass</a>
+            <a href="#ang-ngStyle" class="list-group-item api">ngStyle</a>
+            <a href="#ang-1.1.3.DefinitionvonUI-Elementen" class="list-group-item">1.1.3. Definition von UI-Elementen</a>
+            <a href="#ang-a" class="list-group-item api">a</a>
+            <a href="#ang-formundinteraktiveElemente" class="list-group-item api">form und interaktive Elemente</a>
+            <a href="#ang-1.1.4.Validierungs-undFehlergestaltung" class="list-group-item">1.1.4. Validierungs- und Fehlergestaltung</a>
+            <a href="#ang-FormundInputValidierungsklassen" class="list-group-item api">Form und Input Validierungsklassen</a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="dropdown-menu">
-              <li class="dropdown">
-                <a href="#angular-js" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AngularJS</a>
-                <ul class="dropdown-menu">  
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deklaratives Rendern<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#ang-presentation">Darstellung</a></li>
-                      <li><a href="#">Darstellungsbedingungen</a></li>
-                      <li><a href="#">Verhalten</a></li>
-                      <li><a href="#">Datenbindung</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li class="dropdown-header">Benutzerdefinierte Direktiven</li>
-                      <li><a href="#">Lebenszyklus-Hooks</a></li>
-                      <li><a href="#">Aktualisierungs-Reihenfolge</a></li>
-                      <li><a href="#">Datenbindung</a></li>
-                      <li><a href="#">Interrelationen</a></li>
-                      <li><a href="#">Verhalten & DOM-Aktualisierung</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Komponenten-Systeme</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Datenbindung</a></li>
-                      <li><a href="#">Formatierung</a></li>
-                      <li><a href="#">Darstellungskontrolle</a></li>
-                      <li><a href="#">Validierung</a></li>
-                      <li><a href="#">UI-Geschäftslogik</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="active"><a href="#angular-js">React</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deklaratives Rendern<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#ang-presentation">Darstellung</a></li>
-                  <li><a href="#">Darstellungsbedingungen</a></li>
-                  <li><a href="#">Verhalten</a></li>
-                  <li><a href="#">Datenbindung</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Benutzerdefinierte Direktiven</li>
-                  <li><a href="#">Lebenszyklus-Hooks</a></li>
-                  <li><a href="#">Aktualisierungs-Reihenfolge</a></li>
-                  <li><a href="#">Datenbindung</a></li>
-                  <li><a href="#">Interrelationen</a></li>
-                  <li><a href="#">Verhalten & DOM-Aktualisierung</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Komponenten-Systeme</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Datenbindung</a></li>
-                  <li><a href="#">Formatierung</a></li>
-                  <li><a href="#">Darstellungskontrolle</a></li>
-                  <li><a href="#">Validierung</a></li>
-                  <li><a href="#">UI-Geschäftslogik</a></li>
-                </ul>
-              </li>
-            </ul>
-            
-          </div><!--/.nav-collapse -->
+
+          <a href="#item-ang-1_2" data-toggle="collapse" class="list-group-item">1.2. Darstellungsbedingungen</a>
+          <div class="list-group collapse" id="item-ang-1_2">
+            <a href="#ang-1.2.1.Darstellungslogik" class="list-group-item">1.2.1. Darstellungslogik</a>
+            <a href="#ang-ngSwitch,ngIf,ngShow,ngHide,ngDisable,ngReadonly" class="list-group-item api">ngSwitch, ngIf, ngShow, ngHide, ngDisable, ngReadonly</a>
+            <a href="#ang-1.2.2.Validierungsbedingungen" class="list-group-item">1.2.2. Validierungsbedingungen</a>
+            <a href="#ang-ngMaxlength,ngMinLength,ngPattern,ngRequired" class="list-group-item api">ngMaxlength, ngMinLength, ngPattern, ngRequired</a>
+            <a href="#ang-1.2.3.Text-Filter" class="list-group-item">1.2.3. Text-Filter</a>
+            <a href="#ang-{{'string'|filtername:args}}" class="list-group-item api">{{'string' | filtername: args}}</a>
+          </div>
+          
+          <a href="#item-ang-1_3" data-toggle="collapse" class="list-group-item">1.3. Verhalten</a>
+          <div class="list-group collapse" id="item-ang-1_3">
+            <a href="#ang-1.3.1.BearbeitungvonBenutzer-Interaktionen" class="list-group-item">1.3.1. Bearbeitung von Benutzer-Interaktionen</a>
+            <a href="#ang-EventListeners" class="list-group-item api">Event Listeners</a>
+          </div>
+
+          <a href="#item-ang-1_4" data-toggle="collapse" class="list-group-item">1.4. Datenbindung</a>
+          <div class="list-group collapse" id="item-ang-1_4">
+            <a href="#ang-1.4.1.DatenbindunganUI-Elemente" class="list-group-item">1.4.1. Datenbindung an UI-Elemente</a>
+            <a href="#ang-{{}},ngBind,ngBindHtml,ngBindTemplate,ngInclude" class="list-group-item api">{{ }}, ngBind, ngBindHtml, ngBindTemplate, ngInclude</a>
+          </div>
+
+          <a href="#item-ang-2_5" data-toggle="collapse" class="list-group-item">1.5. Benutzerdefinierte Direktiven</a>
+          <div class="list-group collapse" id="item-ang-2_5">
+            <a href="#ang-1.5.1.Lebenszyklus-Hooks" class="list-group-item">1.5.1. Lebenszyklus-Hooks</a>
+            <a href="#ang-$onInit,$onChanges,$onDestroy,$postLink,$doCheck" class="list-group-item api">$onInit, $onChanges, $onDestroy, $postLink, $doCheck</a>
+            <a href="#ang-1.5.2.Datenbindung" class="list-group-item">1.5.2. Datenbindung</a>
+            <a href="#ang-scope,bindToController,ngTransclude,transclude()" class="list-group-item api">scope, bindToController, ngTransclude, transclude()</a>
+            <a href="#ang-require" class="list-group-item">1.5.3. Interrelations</a>
+            <a href="#ang-1.5.4.EinbindungdesVerhaltensundAktualisierenvonDOM" class="list-group-item">1.5.4. Einbindung des Verhaltens und Aktualisieren von DOM</a>
+            <a href="#ang-link()" class="list-group-item api">link()</a>
+          </div>
         </div>
-    </nav>
 
-    <div id="angular-js" class="container" ng-app="angularjsApp">
-      <page></page>
+        <a href="#item-ang-II" data-toggle="collapse" class="list-group-item">II. Komponenten-Systeme mit Angular</a>
+        <div class="list-group collapse" id="item-ang-II">
+        
+          <a href="#item-ang-2_1" data-toggle="collapse" class="list-group-item">2.1. UI-Geschäftslogik</a>
+          <div class="list-group collapse" id="item-ang-2_1">
+            <a href="#ang-2.1.1.AnbindungderLogikinReaktionaufDatenänderungbzw.UI-Ereignisse" class="list-group-item">2.1.1. Anbindung der Logik in Reaktion auf Datenänderung bzw. UI-Ereignisse</a>
+            <a href="#ang-$watchund$apply" class="list-group-item api">$watch und $apply</a>
+          </div>
+        </div>
+      </div>
+      <a href="#item-react" data-toggle="collapse" class="list-group-item">React</a>
+      <div class="list-group collapse" id="item-react">
+
+        <a href="#item-react-I" data-toggle="collapse" class="list-group-item">I. Deklaratives Rendern</a>
+        <div class="list-group collapse" id="item-react-I">
+          
+          <a href="#item-react-1_1" data-toggle="collapse" class="list-group-item">1.1. Darstellung</a>
+          <div class="list-group collapse" id="item-react-1_1">
+            <a href="#react-1.1.1.DynamischesRendering" class="list-group-item">1.1.1. Dynamisches Rendering</a>
+            <a href="#react-AlternativefürngRepeat" class="list-group-item api">Alternative für ngRepeat</a>
+            <a href="#react-1.1.2.Gestaltung" class="list-group-item">1.1.2. Gestaltung</a>
+            <a href="#react-AlternativefürngClass" class="list-group-item api">Alternative für ngClass</a>
+            <a href="#react-AlternativefürngStyle" class="list-group-item api">Alternative für ngStyle</a>
+            <a href="#react-1.1.3.DefinitionvonUI-Elementen" class="list-group-item">1.1.3. Definition von UI-Elementen</a>
+            <a href="#react-a" class="list-group-item api">a</a>
+            <a href="#react-formundinteraktiveElemente" class="list-group-item api">form und interaktive Elemente</a>
+          </div>
+
+          <a href="#item-react-1_2" data-toggle="collapse" class="list-group-item">1.2. Darstellungsbedingungen</a>
+          <div class="list-group collapse" id="item-react-1_2">
+            <a href="#react-1.2.1.Darstellungslogik" class="list-group-item">1.2.1. Darstellungslogik</a>
+            <a href="#react-AlternativefürngSwitch,ngIf,ngShow,ngHide,ngDisable,ngReadonly" class="list-group-item api">Alternative für ngSwitch, ngIf, ngShow, ngHide, ngDisable, ngReadonly</a>
+          </div>
+
+          <a href="#item-react-1_3" data-toggle="collapse" class="list-group-item">1.3. Verhalten</a>
+          <div class="list-group collapse" id="item-react-1_3">
+            <a href="#react-1.3.1.BearbeitungvonBenutzer-Interaktionen" class="list-group-item">1.3.1. Bearbeitung von Benutzer-Interaktionen</a>
+            <a href="#react-EventListeners" class="list-group-item api">Event Listeners</a>
+          </div>
+
+          <a href="#item-react-1_4" data-toggle="collapse" class="list-group-item">1.4. Databindung</a>
+          <div class="list-group collapse" id="item-react-1_4">
+            <a href="#react-1.4.1.DatenbindunganUI-Elemente" class="list-group-item">1.4.1. Datenbindung an UI-Elemente</a>
+            <a href="#react-Alternativefür{{}},ngBind,ngBindHtml,ngBindTemplate,ngInclude" class="list-group-item api">Alternative für {{ }}, ngBind, ngBindHtml, ngBindTemplate, ngInclude</a>
+          </div>
+
+          <a href="#item-react-1_5" data-toggle="collapse" class="list-group-item">1.5. Benutzerdefinierte Direktiven</a>
+          <div class="list-group collapse" id="item-react-1_5">
+            <a href="#react-1.5.1.Lebenszyklus-Hooks" class="list-group-item">1.5.1. Lebenszyklus-Hooks</a>
+            <a href="#react-1.5.2.Datenbindung" class="list-group-item">1.5.2. Datenbindung</a>
+            <a href="#react-Alternativefürscope,bindToController,ngTransclude,transclude()" class="list-group-item api">Alternative für scope, bindToController, ngTransclude, transclude()</a>
+            <a href="#react-1.5.3.Interrelations" class="list-group-item">1.5.3. Interrelations</a>
+            <a href="#react-Alternativefürrequire" class="list-group-item api">Alternative für require</a>
+            <a href="#react-1.5.4.EinbindungdesVerhaltensundAktualisierenvonDOM" class="list-group-item">1.5.4. Einbindung des Verhaltens und Aktualisieren von DOM</a>
+            <a href="#react-Alternativefürlink()" class="list-group-item api">Alternative für link()</a>
+          </div>
+        </div>
+
+        <a href="#item-react-II" data-toggle="collapse" class="list-group-item">II. Komponenten-Systeme mit React</a>
+        <div class="list-group collapse" id="item-react-II">
+
+          <a href="#item-react-2_1" data-toggle="collapse" class="list-group-item">2.1. UI-Geschäftslogik</a>
+          <div class="list-group collapse" id="item-react-2_1">
+            <a href="#react-2.1.1.AnbindungderLogikinReaktionaufDatenänderungbzw.UI-Ereignisse" class="list-group-item">2.1.1. Anbindung der Logik in Reaktion auf Datenänderung bzw. UI-Ereignisse</a>
+            <a href="#react-Alternativefür$watchund$apply" class="list-group-item api">Alternative für $watch und $apply</a>
+          </div>
+        </div>
+      </div>
     </div>
+    </div>
+    <!-- end of Navigation-->
 
-    <div id="root" class="container"></div>
+    <div class="content-wrapper">
+      <div id="angular-js" ng-app="angularjsApp">
+        <page></page>
+      </div>
+
+      <div id="root"></div>
+    </div>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-sanitize.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/dropdown.js"></script>
+  <script src="./sideMenu/js/BootSideMenu.js"></script>
+  <script src="./menu.js"></script>
   <script src="angularjs/angularjsApp.js"></script>
   <script src="angularjs/declarativeRendering/presentation/dynamicRendering/01_ngRepeat.js"></script>
   <script src="angularjs/declarativeRendering/presentation/styling/ngClass/02_ngClass.js"></script>

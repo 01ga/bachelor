@@ -13,7 +13,7 @@ angularjsApp.controller(
   // scroll page to specified id
   $scope.scrollTo = id => {
     $location.hash(id);
-    $anchorScroll.yOffset = 220;
+    $anchorScroll.yOffset = 120;
     $anchorScroll();
  }
 

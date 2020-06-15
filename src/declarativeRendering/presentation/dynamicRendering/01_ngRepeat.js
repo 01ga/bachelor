@@ -28,40 +28,40 @@ export function NgRepeat(props) {
 
 const data = {
   section: {
-    layer: "Deklaratives Rendern mit React", 
-    group: "Darstellung",
-    spec: "Dynamisches Rendering"
+    layer: "I. Deklaratives Rendern mit React", 
+    group: "1.1. Darstellung",
+    spec: "1.1.1. Dynamisches Rendering"
   },
   article: {
-    title:"ngRepeat",
+    title:"Alternative für ngRepeat",
     codeSnippets: [{
       name:"code.js",
         lang:"js",
         code: 
-        `function NgRepeat(props) {
-          const itemTypes = {
-            SUCCESS: 'success',
-            INFO: 'info',
-            WARNING: 'warning',
-            DANGER: 'danger'
-          }
-          const  dataList = [
-            { itemText: "Dapibus ac facilisis in", href: "#react-ngRepeat", itemType: itemTypes.SUCCESS },
-            { itemText: "Cras sit amet nibh libero", href: "#react-ngRepeat", itemType: itemTypes.INFO },
-            { itemText: "Porta ac consectetur ac", href: "#react-ngRepeat", itemType: itemTypes.WARNING },
-            { itemText:"Vestibulum at eros", href:"#react-ngRepeat", itemType: itemTypes.DANGER }
-          ];
-          const html = dataList.map((item, index) => {
-            const first = index === 0;
-            return (
-              <a key={item.itemType+item.itemText} 
-                className={first ? "hide" : "list-group-item list-group-item-"+item.itemType} 
-                href={item.href}>{index + ') ' + item.itemText}
-              </a>
-            );
-          });
-          return <div className="list-group">{html}</div>; 
-        }`
+`function NgRepeat(props) {
+  const itemTypes = {
+    SUCCESS: 'success',
+    INFO: 'info',
+    WARNING: 'warning',
+    DANGER: 'danger'
+  }
+  const  dataList = [
+    { itemText: "Dapibus ac facilisis in", href: "#react-ngRepeat", itemType: itemTypes.SUCCESS },
+    { itemText: "Cras sit amet nibh libero", href: "#react-ngRepeat", itemType: itemTypes.INFO },
+    { itemText: "Porta ac consectetur ac", href: "#react-ngRepeat", itemType: itemTypes.WARNING },
+    { itemText:"Vestibulum at eros", href:"#react-ngRepeat", itemType: itemTypes.DANGER }
+  ];
+  const html = dataList.map((item, index) => {
+    const first = index === 0;
+    return (
+      <a key={item.itemType+item.itemText} 
+        className={first ? "hide" : "list-group-item list-group-item-"+item.itemType} 
+        href={item.href}>{index + ') ' + item.itemText}
+      </a>
+    );
+  });
+  return <div className="list-group">{html}</div>; 
+}`
     }],
       result: <NgRepeat/>,
       angularLink: "ang-ngRepeat",

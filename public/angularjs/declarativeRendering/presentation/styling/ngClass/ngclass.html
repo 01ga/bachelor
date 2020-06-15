@@ -1,10 +1,7 @@
 <div ng-controller="NgClassCtrl">
-    <blockquote>
-       <p ng-repeat="item in dataList track by item.itemText"
-            ng-class="item.itemClass"
-            ng-class-odd="'thumbnail'"
-            ng-class-even="'green'"
-            ng-bind="item.itemText">
-        </p>
-    </blockquote>
+  <blockquote>
+    <p ng-repeat="item in dataList track by item.itemText" ng-class="item.itemClass" ng-class-odd="'thumbnail'"
+      ng-class-even="'green'" ng-bind="item.itemText">
+    </p>
+  </blockquote>
 </div>
