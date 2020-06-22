@@ -72,7 +72,7 @@ angularjsApp.factory('dataBindingData', function () {
           `<p>HTML included as a template <span class='badge'>YES</span></p>`
       }],
       templateUrl: 'angularjs/declarativeRendering/databinding/databinding.html',
-      reactLink: "react-Alternativefür{{ }},ngBind,ngBindHtml,ngBindTemplate,ngInclude"
+      reactLink: "react-Alternativefür{{}},ngBind,ngBindHtml,ngBindTemplate,ngInclude"
     }
   };
   return function () {

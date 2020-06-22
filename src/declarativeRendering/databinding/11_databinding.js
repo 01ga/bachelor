@@ -112,7 +112,7 @@ const data = {
 }`
     }],
     result: <DataBinding />,
-    angularLink: "ang-{{ }},ngBind,ngBindHtml,ngBindTemplate,ngInclude",
+    angularLink: "ang-{{}},ngBind,ngBindHtml,ngBindTemplate,ngInclude",
     migrationCheckData: {
       info: [
         {
